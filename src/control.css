@@ -1,0 +1,26 @@
+.top-button-container {
+  text-align: center;
+  padding: 0.5rem;
+}
+.top-button-container > button {
+  background-color: #f3f4f6;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.75);
+  transition: border-color 0.25s;
+}
+.top-button-container > button:hover {
+  border-color: #646cff;
+}
+.top-button-container > button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+.top-button-container > button:active {
+  transform: translateY(2px);
+}

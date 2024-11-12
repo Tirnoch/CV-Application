@@ -12,7 +12,7 @@ function Experience() {
   const handleName = (e) => {
     setExperience({ ...experience, name: e.target.value });
   };
-  const handleDegree = (e) => {
+  const handleTitle = (e) => {
     setExperience({ ...experience, title: e.target.value });
   };
   const handleStart = (e) => {
@@ -43,8 +43,8 @@ function Experience() {
           <label htmlFor="degree">Title: </label>
           <input
             type="text"
-            value={experience.degree}
-            onChange={handleDegree}
+            value={experience.title}
+            onChange={handleTitle}
             id="degree"
           />
         </div>

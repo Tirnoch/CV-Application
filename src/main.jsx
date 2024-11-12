@@ -5,9 +5,11 @@ import Personal from './Personal';
 import Experience from './Experience';
 import Education from './Education';
 import Template from './Template';
+import Control from './Control';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    <Control />
     <Personal />
     <Education />
     <Experience />
