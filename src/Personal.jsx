@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './box.css';
 
 function Personal() {
   const [person, setPerson] = useState({
@@ -22,28 +23,49 @@ function Personal() {
 
   return (
     <>
-      <label htmlFor="name">Name: </label>
-      <input type="text" value={person.name} onChange={handleName} id="name" />
-      <br />
-      <label htmlFor="mail">Mail: </label>
-      <input type="mail" value={person.mail} onChange={handleMail} id="mail" />
-      <br />
-      <label htmlFor="phone">Phone: </label>
-      <input
-        type="phone"
-        value={person.number}
-        onChange={handleNumber}
-        id="phone"
-      />
-      <br />
-      <label htmlFor="location">Location: </label>
-      <input
-        type="text"
-        value={person.location}
-        onChange={handleLocation}
-        id="location"
-      />
-      <br />
+      <div className="container">
+        <h2>Personal Details</h2>
+        <div className="segment">
+          <label htmlFor="name">Full Name: </label>
+          <input
+            type="text"
+            value={person.name}
+            onChange={handleName}
+            id="name"
+          />
+        </div>
+        <br />
+        <div className="segment">
+          <label htmlFor="mail">Email: </label>
+          <input
+            type="mail"
+            value={person.mail}
+            onChange={handleMail}
+            id="mail"
+          />
+        </div>
+        <br />
+        <div className="segment">
+          <label htmlFor="phone">Phone: </label>
+          <input
+            type="phone"
+            value={person.number}
+            onChange={handleNumber}
+            id="phone"
+          />
+        </div>
+        <br />
+        <div className="segment">
+          <label htmlFor="location">Location: </label>
+          <input
+            type="text"
+            value={person.location}
+            onChange={handleLocation}
+            id="location"
+          />
+        </div>
+        <br />
+      </div>
     </>
   );
 }
