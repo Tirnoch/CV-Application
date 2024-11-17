@@ -1,7 +1,9 @@
 function Template() {
   return (
     <>
-      <h2>Template</h2>
+      <div className="cv-template">
+        <h2>Template</h2>
+      </div>
     </>
   );
 }

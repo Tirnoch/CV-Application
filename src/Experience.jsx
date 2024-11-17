@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './box.css';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 
 function Experience() {
   const [experience, setExperience] = useState({
@@ -9,6 +10,7 @@ function Experience() {
     end: '',
     description: '',
   });
+  const [isActive, setIsActive] = useState(false);
   const handleName = (e) => {
     setExperience({ ...experience, name: e.target.value });
   };
@@ -24,58 +26,71 @@ function Experience() {
   const handleDescription = (e) => {
     setExperience({ ...experience, description: e.target.value });
   };
+  const handleDisplay = () => {
+    setIsActive(!isActive);
+  };
 
   return (
     <>
-      <div className="container">
-        <h2>Experience</h2>
-        <div className="segment">
-          <label htmlFor="name">Full Name: </label>
+      <div className="box-container" id="experience">
+        <div className="title">
+          <label htmlFor="experience-button">Experience</label>
+          <button
+            className={isActive ? 'active' : ''}
+            id="education-button"
+            onClick={handleDisplay}
+          >
+            <FaAngleDown className={!isActive ? 'segment' : 'hidden'} />
+            <FaAngleUp className={isActive ? 'segment' : 'hidden'} />
+          </button>
+        </div>
+        <div className={isActive ? 'segment' : 'hidden'}>
+          <label htmlFor="exp-name">Company Name: </label>
           <input
             type="text"
             value={experience.name}
             onChange={handleName}
-            id="name"
+            id="exp-name"
           />
         </div>
         <br />
-        <div className="segment">
-          <label htmlFor="degree">Title: </label>
+        <div className={isActive ? 'segment' : 'hidden'}>
+          <label htmlFor="exp-title">Title: </label>
           <input
             type="text"
             value={experience.title}
             onChange={handleTitle}
-            id="degree"
+            id="exp-title"
           />
         </div>
         <br />
-        <div className="segment">
-          <label htmlFor="start-date">Start Date: </label>
+        <div className={isActive ? 'segment' : 'hidden'}>
+          <label htmlFor="exp-start-date">Start Date: </label>
           <input
             type="date"
             value={experience.start}
             onChange={handleStart}
-            id="start-date"
+            id="exp-start-date"
           />
         </div>
         <br />
-        <div className="segment">
-          <label htmlFor="end-date">End Date: </label>
+        <div className={isActive ? 'segment' : 'hidden'}>
+          <label htmlFor="exp-end-date">End Date: </label>
           <input
             type="date"
             value={experience.end}
             onChange={handleEnd}
-            id="end-date"
+            id="exp-end-date"
           />
         </div>
         <br />
-        <div className="segment">
-          <label htmlFor="degree">Description: </label>
+        <div className={isActive ? 'segment' : 'hidden'}>
+          <label htmlFor="description">Description: </label>
           <textarea
             rows="5"
             value={experience.description}
             onChange={handleDescription}
-            id="degree"
+            id="description"
           />
         </div>
       </div>

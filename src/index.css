@@ -12,7 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.hidden {
+  display: none;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -35,25 +37,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -64,5 +47,53 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid red;
+  display: grid;
+  grid-template-areas: 'input output';
+  grid-template-columns: 1fr 3fr;
+}
+.input-contaner {
+  grid-area: input;
+  display: flex;
+  justify-content: center;
+  border: 5px solid yellow;
+  background-color: #213547;
+  align-items: center;
+}
+.output-container {
+  grid-area: output;
+}
+#personal {
+  grid-area: personal;
+}
+#experience {
+  grid-area: experience;
+}
+#education {
+  grid-area: education;
+}
+.box-container {
+  border: 2px solid greed;
+  background-color: green;
+  grid-area: container;
+}
+.cv-template {
+  background-color: orange;
+  grid-area: cv;
+}
+.top-button-container {
+  grid-area: control;
+}
+@media (max-width: 450px) {
+  .container {
+    grid-template-areas:
+      'input'
+      'output';
+    grid-template-columns: 1fr;
   }
 }

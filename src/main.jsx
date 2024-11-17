@@ -9,10 +9,16 @@ import Control from './Control';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <Control />
-    <Personal />
-    <Education />
-    <Experience />
-    <Template />
+    <div className="container">
+      <div className="input-container">
+        <Control />
+        <Personal />
+        <Education />
+        <Experience />
+      </div>
+      <div className="output-container">
+        <Template />
+      </div>
+    </div>
   </StrictMode>
 );

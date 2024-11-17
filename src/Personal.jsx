@@ -23,15 +23,15 @@ function Personal() {
 
   return (
     <>
-      <div className="container">
+      <div className="box-container" id="personal">
         <h2>Personal Details</h2>
         <div className="segment">
-          <label htmlFor="name">Full Name: </label>
+          <label htmlFor="personal-name">Full Name: </label>
           <input
             type="text"
             value={person.name}
             onChange={handleName}
-            id="name"
+            id="personal-name"
           />
         </div>
         <br />
