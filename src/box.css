@@ -6,20 +6,19 @@
   padding: 0;
 }
 .box-container {
-  border: 2px solid white;
   display: flex;
   flex-direction: column;
   background-color: white;
   color: rgba(0, 0, 0, 0.75);
-  width: min(300px, 80%-4rem);
+  min-width: 400px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   padding: 0.5rem;
   align-items: center;
   justify-content: center;
+  margin: 1rem 2rem;
 }
 .segment {
-  border: 2px solid coral;
   display: flex;
   flex-direction: column;
   text-align: flex-start;

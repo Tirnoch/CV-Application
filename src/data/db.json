@@ -1,0 +1,28 @@
+{
+  "Information": {
+    "Education": {
+      "Mimar Sinan University": {
+        "Degree": "Sanatto Sepetto",
+        "Start": "01.01.2020",
+        "End": "02.02.2022"
+      },
+      "Bogazici University": {
+        "Degree": "Elektro Gitarro",
+        "Start": "03.03.2021",
+        "End": "04.04.2024"
+      }
+    },
+    "Experience": {
+      "A Company": {
+        "Title": "Lead Designer",
+        "Start": "01.01.2020",
+        "End": "02.02.2022"
+      },
+      "B Company": {
+        "Title": "Weird Jobs Specialist",
+        "Start": "03.03.2023",
+        "End": "04.05.2026"
+      }
+    }
+  }
+}
