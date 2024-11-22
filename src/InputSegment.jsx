@@ -2,6 +2,7 @@
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa6';
 import './box.css';
 const InputSegment = ({
+  type,
   name,
   title,
   start,
@@ -19,12 +20,12 @@ const InputSegment = ({
     <>
       <div className="box-container">
         <div className="input-section-title">
-          <label htmlFor="education-button">
-            {description ? 'Experience' : 'Education'}
+          <label htmlFor={type + ' button'}>
+            {type === 'School' ? 'Education' : 'Experience'}
           </label>
           <button
             className={isActive ? 'active' : ''}
-            id="education-button"
+            id={type + ' button'}
             onClick={handleDisplay}
           >
             <FaAngleDown className={!isActive ? 'segment' : 'hidden'} />
@@ -32,44 +33,58 @@ const InputSegment = ({
           </button>
         </div>
         <div className={isActive ? 'segment' : 'hidden'}>
-          <label htmlFor="edu-name">Name: </label>
-          <input type="text" value={name} onChange={handleName} id="edu-name" />
+          <label htmlFor={type + ' name'}>{type} Name: </label>
+          <input
+            type="text"
+            value={name}
+            onChange={handleName}
+            id={type + ' name'}
+          />
         </div>
         <div className={isActive ? 'segment' : 'hidden'}>
-          <label htmlFor="degree">Title: </label>
-          <input type="text" value={title} onChange={handleTitle} id="degree" />
+          <label htmlFor={type + ' title'}>
+            {type === 'School' ? 'Degree' : 'Title'}{' '}
+          </label>
+          <input
+            type="text"
+            value={title}
+            onChange={handleTitle}
+            id={type + ' title'}
+          />
         </div>
         <div className={isActive ? 'segment' : 'hidden'}>
-          <label htmlFor="edu-start-date">Start Date: </label>
+          <label htmlFor={type + ' start'}>Start Date: </label>
           <input
             type="date"
             value={start}
             onChange={handleStart}
-            id="edu-start-date"
+            id={type + ' start'}
           />
         </div>
         {/*End-date cannot be earlier than the start-date. Handle it when you are free*/}
         <div className={isActive ? 'segment' : 'hidden'}>
-          <label htmlFor="edu-end-date">End Date: </label>
+          <label htmlFor={type + ' end'}>End Date: </label>
           <input
             type="date"
             value={end}
+            min={start}
             onChange={handleEnd}
-            id="edu-end-date"
+            id={type + ' end'}
           />
         </div>
 
-        {description && (
+        {type === 'Company' ? (
           <div className={isActive ? 'segment' : 'hidden'}>
-            <label htmlFor="descrtipion">Description: </label>
+            <label htmlFor={type + ' description'}>Description: </label>
             <textarea
               rows="5"
               value={description}
               onChange={handleDescription}
-              id="descrtipion"
+              id={type + ' description'}
+              placeholder="Type here. . ."
             />
           </div>
-        )}
+        ) : null}
       </div>
     </>
   );

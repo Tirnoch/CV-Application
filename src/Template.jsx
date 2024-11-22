@@ -1,11 +1,12 @@
 import './template.css';
+import CvTitle from './CvTitle';
 
 function Template() {
   return (
     <>
       <div className="cv-template">
         <div className="personal-output">
-          <p id="name-output">Name data</p>
+          <p id="name-output">Name data </p>
           <div className="contact-details">
             <p>Mail data</p>
             <p>Phone data</p>

@@ -3,11 +3,12 @@ import InputSegment from './InputSegment';
 
 function Experience() {
   const [experience, setExperience] = useState({
+    type: 'Company',
     name: 'Odunluk Graphic Design',
     title: 'Graphic Designer',
     start: '',
     end: '',
-    description: 'Type here. . . ',
+    description: '',
     id: '',
   });
   const [isActive, setIsActive] = useState(false);
@@ -40,6 +41,7 @@ function Experience() {
         handleDisplay={handleDisplay}
         handleDescription={handleDescription}
         isActive={isActive}
+        type={experience.type}
         name={experience.name}
         title={experience.title}
         start={experience.start}

@@ -3,11 +3,12 @@ import InputSegment from './InputSegment';
 
 function Education() {
   const [school, setSchool] = useState({
+    type: 'School',
     name: 'Mimar Sinan University',
     title: 'Sanat Sepet Isleri',
     start: '',
     end: '',
-    description: 'Ahmet',
+    description: null,
     id: '',
   });
   const [isActive, setIsActive] = useState(false);
@@ -23,6 +24,9 @@ function Education() {
   const handleEnd = (e) => {
     setSchool({ ...school, end: e.target.value });
   };
+  const handleDescription = (e) => {
+    setSchool({ ...school, description: e.target.value });
+  };
 
   const handleDisplay = () => {
     setIsActive(!isActive);
@@ -36,11 +40,13 @@ function Education() {
         handleStart={handleStart}
         handleEnd={handleEnd}
         handleDisplay={handleDisplay}
+        handleDescription={handleDescription}
         isActive={isActive}
         name={school.name}
         title={school.title}
         start={school.start}
         end={school.end}
+        type={school.type}
       />
     </>
   );
